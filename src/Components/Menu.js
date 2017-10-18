@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MenuItem from './MenuItem';
+import './Menu.css';
 
 export default class Menu extends React.Component{
   render(){
@@ -9,7 +10,7 @@ export default class Menu extends React.Component{
     } = this.props
 
     return (
-      <div>
+      <div className="menu">
           {items.map((item, index) => (
               <MenuItem key={item.id} item={item}></MenuItem>
           ))}

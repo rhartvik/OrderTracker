@@ -1,0 +1,21 @@
+.menu-item {
+  margin: 15px;
+}
+
+.item-thumbnail {
+  object-fit: cover;
+  width:230px;
+  height:230px;
+}
+
+.item-name {
+  padding: 10px;
+}
+
+.item-price {
+  float: right;
+}
+
+.item-quantity {
+  padding: 10px; 
+}

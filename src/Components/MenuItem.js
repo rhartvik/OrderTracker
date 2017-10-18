@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-
+import './MenuItem.css';
 
 class MenuItem extends React.Component{
   render(){
@@ -13,7 +12,7 @@ class MenuItem extends React.Component{
     } = this.props.item
 
     return (
-      <div>
+      <div className="menu-item">
         <img className='item-thumbnail' src={imageUrl} alt={name}/>
         <div>
         <p>
@@ -22,7 +21,7 @@ class MenuItem extends React.Component{
         </p>
         <p>
           <button>-</button>
-          {quantity}
+          <span className="item-quantity">{quantity}</span>
           <button>+</button>
         </p>
         </div>
