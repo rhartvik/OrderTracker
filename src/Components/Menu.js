@@ -20,5 +20,5 @@ export default class Menu extends React.Component{
 }
 
 Menu.propTypes = {
-items: PropTypes.array
+  items: PropTypes.array
 };
