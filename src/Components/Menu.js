@@ -12,7 +12,9 @@ export default class Menu extends React.Component{
     return (
       <div className="menu">
           {items.map((item, index) => (
-              <MenuItem key={item.id} item={item}></MenuItem>
+              <MenuItem key={item.id} item={item}
+                addItemToOrder={this.props.addItemToOrder}
+                removeItemFromOrder={this.props.removeItemFromOrder}></MenuItem>
           ))}
       </div>
     );

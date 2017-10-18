@@ -3,6 +3,29 @@ import PropTypes from 'prop-types';
 import './MenuItem.css';
 
 class MenuItem extends React.Component{
+
+  state = {
+    id: 0,
+    quantity: 0
+  }
+
+  componentWillMount() {
+    this.setState(() => {
+      return {
+        id: this.props.item.id,
+        quantity: this.props.item.quantity
+      }
+    });
+  }
+
+  increaseQuantity = () => {
+    this.props.addItemToOrder(this.state.id);
+  }
+
+  decreaseQuantity = () => {
+    this.props.removeItemFromOrder(this.state.id);
+  }
+
   render(){
     const {
       name,
@@ -20,9 +43,9 @@ class MenuItem extends React.Component{
           <span className="item-price">{price.toLocaleString('en-CA', { style: 'currency', currency: 'CAD' })}</span>
         </p>
         <p>
-          <button>-</button>
+          <button onClick={this.decreaseQuantity.bind(this)}>-</button>
           <span className="item-quantity">{quantity}</span>
-          <button>+</button>
+          <button onClick={this.increaseQuantity.bind(this)}>+</button>
         </p>
         </div>
       </div>

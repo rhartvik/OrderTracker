@@ -4,7 +4,13 @@ import './App.css';
 import Menu from './Components/Menu'
 
 class App extends Component {
-  render() {
+
+  state = {
+    menuItems: []
+  }
+
+  constructor(props) {
+    super(props);
 
     const staticMenuItems = [
       {
@@ -37,13 +43,48 @@ class App extends Component {
       }
     ];
 
+    this.state = { menuItems: staticMenuItems }
+  }
+
+  addItemToOrder = (itemId) => {
+    const updatedItems = this.state.menuItems.map((item,index) => item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item);
+    this.setState((prevState, props) => { return { menuItems: updatedItems } });
+  }
+
+  removeItemFromOrder = (itemId) => {
+    const updatedItems = this.state.menuItems.map((item,index) => item.id === itemId 
+      ? { ...item, quantity: item.quantity === 0 ? 0 : item.quantity - 1 } 
+      : item);
+    this.setState((prevState, props) => { return { menuItems: updatedItems } });
+  }
+
+  increaseQuantity = () => {
+    this.setState((prevState, props) => {
+      return {quantity: prevState.quantity + 1};
+    });
+  }
+
+  decreaseQuantity = () => {
+    if (this.state.quantity === 0) {
+      return;
+    }
+    this.setState((prevState, props) => {
+      return {quantity: prevState.quantity - 1};
+    });
+  }
+
+  render() {
+
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Store</h1>
         </header>
-        <Menu items={staticMenuItems} />
+        <Menu items={this.state.menuItems}
+          addItemToOrder={this.addItemToOrder.bind(this)}
+          removeItemFromOrder={this.removeItemFromOrder.bind(this)}/>
       </div>
     );
   }
