@@ -14,28 +14,28 @@ class App extends Component {
 
     const staticMenuItems = [
       {
-        name: 'burger',
+        name: 'Burger',
         id: 1,
         price: 14.56,
         quantity: 0,
         imageUrl: 'https://www.burger21.com/wp-content/themes/burger21/images/bacon-cheesy-burger.png'
       },
       {
-        name: 'fries',
+        name: 'Fries',
         id: 2,
         price: 5.34,
         quantity: 0,
         imageUrl: 'http://recipes.timesofindia.com/photo/54659021.cms'
       },
       {
-        name: 'salad',
+        name: 'Salad',
         id: 3,
         price: 11.73,
         quantity: 1,
         imageUrl: 'http://www.simplyrecipes.com/wp-content/uploads/2016/07/2016-08-12-BLT-Salad-3-600x400.jpg'
       },
       {
-        name: 'energy bar',
+        name: 'Energy Bar',
         id: 4,
         price: 4.56,
         quantity: 0,
