@@ -6,7 +6,16 @@
   float: right;
 }
 
-.total-cost {
-  float: right;
-  font-size: 18pt;
+#grand-total {
+  font-size: 12pt;
+  font-weight: bolder;
+}
+
+table {
+  width: 100%;
+}
+@media (min-width: 480px) {
+  #grand-total {
+    font-size: 14pt;
+  }
 }

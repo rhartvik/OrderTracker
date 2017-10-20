@@ -40,12 +40,11 @@ export default class Cart extends Component {
               </tr>
             ))}
           </tbody>
-          <tfoot>
+          <tfoot id="grand-total">
             <tr>
               <td className="name">Grand total:</td>
-              <td/>
-              <td/>
-              <td className="total-cost">{this.currency(total)}</td>
+              <td />
+              <td className="cost">{this.currency(total)}</td>
             </tr>
           </tfoot>
         </table>
