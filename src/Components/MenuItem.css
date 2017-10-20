@@ -4,8 +4,15 @@
 
 .item-thumbnail {
   object-fit: cover;
-  width:230px;
-  height:230px;
+  width:130px;
+  height:130px;
+}
+
+@media screen and (min-width: 480px) {
+  .item-thumbnail {
+    width:230px;
+    height:230px;
+  }
 }
 
 .item-name {
