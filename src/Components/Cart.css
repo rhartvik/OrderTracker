@@ -1,0 +1,12 @@
+.name {
+  float: left;
+}
+
+.cost {
+  float: right;
+}
+
+.total-cost {
+  float: right;
+  font-size: 18pt;
+}

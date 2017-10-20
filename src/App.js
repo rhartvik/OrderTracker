@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './shopping-cart.svg';
 import './App.css';
 import Menu from './Components/Menu'
+import Cart from './Components/Cart'
 
 class App extends Component {
 
@@ -85,6 +86,7 @@ class App extends Component {
         <Menu items={this.state.menuItems}
           addItemToOrder={this.addItemToOrder.bind(this)}
           removeItemFromOrder={this.removeItemFromOrder.bind(this)}/>
+        <Cart items={this.state.menuItems}/>
       </div>
     );
   }
